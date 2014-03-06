@@ -14,51 +14,38 @@ unofficial-nonen-fan-club
  * APIはおそらくは[http://b-world.org/nounen/api](http://b-world.org/nounen/api)以下になる
 
 # DB設計
-テーブル|説明
---------|--------
-user|ユーザーアカウント
-url|URL投稿
-comment|URL投稿に対するコメント
-tag|URL投稿に対するタグ付け
-follow|フォロー関係
 
-## user
-コラム|データ型|属性|その他|説明
---------|--------|--------|--------|--------
-username|varchar(32)|||ユーザー名
-nickname|varchar(32)|||名前
-introducion|varchar(256)|||自己紹介
-password|varchar(32)|||パスワード
-mail|varchar(256)|||メールアドレス
-fcn||||公式ファンクラブの会員番号
+YesodのModelの仕様上、テーブルのカラムにはそれぞれIDが振られるのでそれをIDとして使用します
 
-## url
-コラム|データ型|属性|その他|説明
---------|--------|--------|--------|--------
-username|varchar(32)|||投稿者のユーザー名
-url|varchar(4096)|||URL
-time|int(10)|UNSIGNED||日時 ( UNIXタイムスタンプ )
-id|int(128)|UNSIGNED|AUTO_INCREMENT|URL投稿を管理するユニークなID
-
-## comment
-コラム|データ型|属性|その他|説明
---------|--------|--------|--------|--------
-username|varchar(32)|||コメントするユーザー名
-comment|varchar(128)|||コメント
-id|int(128)|||URL投稿ID
-
-## tag
-コラム|データ型|属性|その他|説明
---------|--------|--------|--------|--------
-username|varchar(32)|||タグ付けするユーザー名
-tag|varchar(32)|||タグ
-id|int(128)|||URL投稿ID
-
-## follow
-コラム|データ型|属性|その他|説明
---------|--------|--------|--------|--------
-follower|varchar(32)|||フォローする側のユーザー名
-followee|varchar(32)|||フォローされる側のユーザー名
+* ユーザー
+ * ユーザー名
+ * 名前
+ * 自己紹介
+ * パスワード
+ * メールアドレス
+ * 公式ファンクラブの会員番号
+* URL投稿
+ * URL
+* URLと投稿ユーザの関係
+ * URLID
+ * ユーザID
+ * 投稿時間
+* URL投稿に対するコメント
+ * コメント
+ * URLID
+ * ユーザID
+ * 投稿時間
+* タグ
+ * タグ
+* タグとURLの関係
+ * URLID
+ * タグID
+* タグとユーザの関係
+ * タグとURLの関係ID
+ * 投稿時間
+* フォロー関係
+ * フォローする側のユーザID
+ * フォローされる側のユーザID
 
 # API設計
 
