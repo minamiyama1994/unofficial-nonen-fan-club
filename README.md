@@ -114,7 +114,7 @@ POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal 
  * GET
  * respons
   * 200 OK
-  * {"id":id,"name":name}形式のJSONデータ
+  * {"name":name}形式のJSONデータ
 * email
  * 自分のメールアドレスを取得する
  * GET
@@ -132,7 +132,7 @@ POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal 
  * GET
  * respons
   * 200 OK
-  * {"id":id,"info":info}形式のJSONデータ
+  * {"info":info}形式のJSONデータ
 * fcn
  * 自分の公式ファンクラブの会員番号をFCNにする
  * GET
@@ -144,7 +144,7 @@ POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal 
  * GET
  * respons
   * 200 OK
-  * {"id":id,"fcn":fcn}形式のJSONデータ
+  * {"fcn":fcn}形式のJSONデータ
 * url/#urlid
  * urlidのurlを取得する
  * GET
