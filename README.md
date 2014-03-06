@@ -56,7 +56,7 @@ POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal 
   * STATUS
   * BODY
 * create/#id/#email/#password
- * メールアドレスがemailのIDがnameでパスワードがpasswordなユーザを仮作成し、emailに認証用の自動生成したURLを送信する
+ * メールアドレスがemailのIDがidでパスワードがpasswordなユーザを仮作成し、emailに認証用の自動生成したURLを送信する
  * POST
  * respons
   * 200 OK
@@ -68,7 +68,7 @@ POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal 
   * 200 OK
   * idとemailとpasswordを入力する画面
 * auth/#authid/#email/#password
- * メールに自動送信した認証用URLに対してメールアドレスとパスワードを付与し、認証を行う　これでパスワードが一致した場合IDがnameなユーザが作成される
+ * メールに自動送信した認証用URLに対してメールアドレスとパスワードを付与し、認証を行う　これでパスワードが一致した場合IDがidなユーザが作成される
  * POST
  * respons
   * 201 Created
