@@ -44,7 +44,7 @@ unofficial-nonen-fan-club
 以下のAPIは http://b-world.org/nounen/api (将来的にはSSLを導入し https://b-world.org/nounen/api )以下にあるものとする  
 create/user/#id/#email/#password以外のAPIはセッションなどでコネクションが張られていない場合は自動的に認証画面に飛ばすようになるはず  
 create/user/#id/#email/#password以外のAPIはセッションから勝手にユーザIDを引っ張って来る  
-Twitter連携やFacebook連携やTumblr連携は後回し、後回し
+Twitter連携やFacebook連携やTumblr連携は後回し、後回し  
 セッションがつながっておらず認証済みだと確認できなかった場合、403 Forbiddenを返し、BODYには"not found user"を格納する  
 GET系のAPIで存在しない各種IDを指定したなどの場合は404 Not Foundを返す  
 POST系のAPIでサーバ内部でエラーが発生した場合、500 Internal Server Errorを返す  
